@@ -4,7 +4,7 @@ import blogPosts from '../data/blogData';
 export default function BlogPost() {
   const { id } = useParams();
   const post = blogPosts.find(p => p.id === id);
-
+// h1 found or not found 
   if (!post) {
     return <h2>Post Not Found</h2>;
   }
