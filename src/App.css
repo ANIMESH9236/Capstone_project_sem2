@@ -1,23 +1,218 @@
-.blog {
-    padding: 20px;
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2c3e50;
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links button,
+.nav-links a {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  margin-left: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  text-decoration: none;
+  outline: none;
+}
+
+.nav-links button:hover,
+.nav-links a:hover {
+  color: #3498db;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz-row {
+  display: flex;
+  gap: 2rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.quiz-box {
+  background: #fff;
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(44,62,80,0.07);
+  width: 260px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.quiz-box:hover {
+  transform: translateY(-5px) scale(1.03);
+}
+
+.quiz-box h2 {
+  margin-bottom: 1.2rem;
+  color: #2c3e50;
+}
+
+.quiz-box button {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.quiz-box button:hover {
+  background: #217dbb;
+}
+
+/* Quiz option button */
+.quiz-option-btn {
+  display: block;
+  margin: 0.5rem 0;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  background: #3498db;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.quiz-option-btn:hover {
+  background: #217dbb;
+}
+
+/* Modal styles */
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 100;
+}
+
+.modal {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+  z-index: 101;
+  min-width: 300px;
+  max-width: 90vw;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.auth-form input {
+  padding: 0.7rem 1rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.auth-form button {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 0;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.close-btn {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  float: right;
+}
+
+/* Score page overlay */
+.score-page {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* Footer */
+.footer {
+  background: #2c3e50;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: auto;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .quiz-row {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
   }
-  
-  .blog-card {
-    background: white;
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  .quiz-box {
+    width: 90vw;
+    max-width: 350px;
   }
-  
-  .blog-card h2 {
-    margin: 0;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
   }
-  
-  .blog-post {
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  .nav-links {
+    margin-top: 0.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
   }
-  
+}
